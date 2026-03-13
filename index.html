@@ -6,6 +6,12 @@
     <title>Shampoo Science | Bento Grid</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+    </style>
 </head>
 <body>
 
@@ -22,37 +28,65 @@
     <main class="container">
         <div class="bento-grid">
             
+            <!-- Row 1 -->
             <section class="frosted-card span-2">
                 <h2>01. Das Sebum-Dilemma</h2>
                 <p>Deine Kopfhaut produziert Sebum, um das Haar zu schützen. Doch Sebum ist <em>hydrophob</em>. Staub und Schadstoffe kleben an diesem Fettfilm wie an einem Magneten.</p>
             </section>
 
+            <section class="frosted-card" style="display: flex; justify-content: center; align-items: center; padding: 15px; overflow: hidden;">
+                <img id="shampoo-img" src="shampoo_premium.png" alt="Premium Shampoo" style="max-width: 100%; max-height: 250px; object-fit: contain; border-radius: 12px; filter: drop-shadow(0 15px 30px rgba(0,242,254,0.5)); animation: float 6s ease-in-out infinite;">
+            </section>
+
+            <!-- Row 2 -->
             <section class="frosted-card">
                 <h3>Hydrophil</h3>
-                <p>Liebt Wasser & sorgt für den Abtransport.</p>
+                <p>Liebt Wasser & sorgt für rapiden Abtransport von gelöstem Schmutz durch Mizellenbildung.</p>
             </section>
 
             <section class="frosted-card">
                 <h3>Hydrophob</h3>
-                <p>Bindet sich an Öle & bricht die Fettschicht auf.</p>
-            </section>
-
-            <section class="frosted-card span-2">
-                <h2>02. Schutz & Stabilität</h2>
-                <p>Ein Top-Shampoo ist leicht sauer, um die <strong>Disulfidbrücken</strong> im Keratin nicht zu schädigen. Silikone und Polymere ersetzen nach dem Waschen die natürliche Schutzschicht.</p>
+                <p>Bindet sich an Öle & bricht die hartnäckige Fettschicht am Ansatz auf.</p>
             </section>
 
             <section class="frosted-card">
-                <h3>Mythen-Check</h3>
-                <p>"Quietschsauber" ist schlecht! Es bedeutet, dass deine natürlichen Schutzöle komplett entfernt wurden.</p>
+                <h3>Schaum-Falle</h3>
+                <p>Viel Schaum reinigt nicht zwingend besser – es ist oft ein psychologischer Effekt durch extra Tenside.</p>
             </section>
 
-             <section class="frosted-card">
-                <h3>Schaum-Falle</h3>
-                <p>Viel Schaum reinigt nicht besser – es ist nur ein psychologischer Effekt für den Konsumenten.</p>
+            <!-- Row 3 -->
+            <section class="frosted-card span-2">
+                <h2>02. Tenside: Die Waschaktiven</h2>
+                <p>Tenside wie <strong>SLS</strong> (Sodium Lauryl Sulfate) reinigen extrem stark, können aber reizen. Moderne Alternativen wie <em>Zuckertenside</em> oder Aminosäure-basierte Tenside sind deutlich milder zur Hautbarriere und schützen vor Feuchtigkeitsverlust.</p>
+            </section>
+
+            <section class="frosted-card">
+                <h3>pH-Wert</h3>
+                <p>Gute Shampoos sind leicht sauer (pH 4,5 - 5,5). Das schmiegt die äußere Schuppenschicht (Cuticula) des Haares an und sorgt für natürlichen Glanz.</p>
+            </section>
+
+            <!-- Row 4 -->
+            <section class="frosted-card">
+                <h3>Keratin</h3>
+                <p>Dein Haar besteht zu 90% aus dem Protein <strong>Keratin</strong>. Es wird durch komplexe Wasserstoff- und Disulfidbrücken in Form gehalten, die durch Chemie verändert werden können.</p>
+            </section>
+
+            <section class="frosted-card span-2">
+                <h2>03. Reparatur-Mechanismen</h2>
+                <p>Nach dem Waschen ist das Haar oft negativ geladen. Conditioner enthalten <strong>kationische (positiv geladene) Polymere</strong>. Diese ziehen sich wie kleine Magnete exakt an die geschädigten, stark negativen Stellen im Haar und füllen Risse gezielt wieder auf.</p>
             </section>
 
         </div>
     </main>
+
+    <script>
+        // Apple-style progress bar on scroll
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progress-bar').style.width = scrolled + '%';
+        });
+    </script>
 </body>
 </html>
